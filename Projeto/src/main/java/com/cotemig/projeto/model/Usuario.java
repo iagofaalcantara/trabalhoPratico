@@ -1,12 +1,30 @@
-package com.cotemig.projeto.models;
+package com.cotemig.projeto.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 
 public class Usuario {
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
     private String nome;
     private String email;
     private String senha;
     private String setor;
     private int ramal;
     private String cargo;
+
+    //construtor criado pela ide, se excluir da erro
+    public Usuario() {
+    }
+
     public Usuario(String nome, String email, String senha, String setor, int ramal, String cargo) {
         this.nome = nome;
         this.email = email;
@@ -15,6 +33,17 @@ public class Usuario {
         this.ramal = ramal;
         this.cargo = cargo;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+
+
     public String getNome() {
         return nome;
     }
