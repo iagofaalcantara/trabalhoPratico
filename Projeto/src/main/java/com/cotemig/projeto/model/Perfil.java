@@ -1,4 +1,4 @@
-package com.cotemig.projeto.models;
+package com.cotemig.projeto.model;
 
 public class Perfil {
     private int id;
