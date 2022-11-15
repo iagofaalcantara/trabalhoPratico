@@ -17,7 +17,7 @@ import java.util.List;
 public class ControllerUsuário {
 
     @Autowired
-    private  UsuarioServices usuarioServices;
+    private UsuarioServices usuarioServices;
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> getUsuario(@PathVariable("id") Integer id){
 
