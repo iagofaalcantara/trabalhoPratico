@@ -1,4 +1,4 @@
 package com.cotemig.projeto.services;
 
-public class AtendenteServices {
+public interface AtendenteService {
 }
