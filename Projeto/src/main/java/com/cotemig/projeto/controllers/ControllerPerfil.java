@@ -34,7 +34,6 @@ public class ControllerPerfil{
 
     @PostMapping("/novoPerfil")
     public ResponseEntity<Perfil> addPerfil(@NonNull @Validated @RequestBody Perfil perfil){
-
         perfilServices.savePerfil(perfil);
         return new ResponseEntity<>(perfil, HttpStatus.OK);
     }
