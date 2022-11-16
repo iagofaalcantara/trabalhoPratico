@@ -1,5 +1,15 @@
 package com.cotemig.projeto.services;
 
+import com.cotemig.projeto.model.Solicitante;
+import com.cotemig.projeto.repository.SolicitanteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+@Service
 public class SolicitanteServices {
 
     @Autowired
@@ -35,9 +45,7 @@ public class SolicitanteServices {
             user1Teste.setEmail("livia.fsb@gmail.com");
             user1Teste.setRamal(555);
             user1Teste.setSenha("2020");
-           user1Teste.setSetor("TI");
-
+            user1Teste.setSetor("TI");
         }
-
     }
 }
