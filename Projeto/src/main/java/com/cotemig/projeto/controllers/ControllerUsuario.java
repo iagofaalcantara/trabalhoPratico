@@ -13,7 +13,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("usuario")
 public class ControllerUsuario {
 
     @Autowired
@@ -24,7 +24,6 @@ public class ControllerUsuario {
 
     @Autowired
     private PerfilServices perfilServices;
-
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Usuario> editarUsuario( @NonNull @Validated @RequestBody Usuario usuario, @PathVariable Integer id ){
@@ -38,8 +37,4 @@ public class ControllerUsuario {
         usuarioServices.saveUsuario(usuarioSearch);
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
-
-
-
-
 }

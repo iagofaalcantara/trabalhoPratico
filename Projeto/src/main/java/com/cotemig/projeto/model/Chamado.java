@@ -18,7 +18,6 @@ public class Chamado {
     private String tipo;
     private String descricao;
     private String data;
-    private String[] anexo;
     private String status;
     private int nivelPrioridade;
 
@@ -33,11 +32,10 @@ public class Chamado {
     public Chamado() {
     }
 
-    public Chamado(String tipo, String descricao, String data, String[] anexo, String status, int nivelPrioridade) {
+    public Chamado(String tipo, String descricao, String data, String status, int nivelPrioridade) {
         this.tipo = tipo;
         this.descricao = descricao;
         this.data = data;
-        this.anexo = anexo;
         this.status = status;
         this.nivelPrioridade = nivelPrioridade;
     }
@@ -64,14 +62,6 @@ public class Chamado {
 
     public void setData(String data) {
         this.data = data;
-    }
-
-    public String[] getAnexo() {
-        return anexo;
-    }
-
-    public void setAnexo(String[] anexo) {
-        this.anexo = anexo;
     }
 
     public String getStatus() {

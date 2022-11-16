@@ -10,9 +10,10 @@ import java.util.Optional;
 
 
 @Service
-public class PerfilServices {
+public class PerfilServices implements PerfilService{
     @Autowired
     private PerfilRepository perfilRepository;
+
     public Perfil getPerfil(Integer id){
         Optional<Perfil> perfil = perfilRepository.findById(id);
 
@@ -22,26 +23,35 @@ public class PerfilServices {
         return  perfil.get();
     }
 
-    public List<Perfil> getAll(){
+    public List<Perfil> getAllPerfis(){
         return perfilRepository.findAll();
     }
+
     public  void savePerfil(Perfil perfil){
         perfilRepository.save(perfil);
     }
 
-    public void removerPerfil(Perfil perfil){
+    @Override
+    public void deletePerfil(Perfil perfil) {
         perfilRepository.delete(perfil);
     }
 
     public void adicionarPerfil(){
 
-            Perfil perfil = new Perfil();
-            perfil.setTipo("Administrador");
-            savePerfil(perfil);
+        Perfil perfil = new Perfil();
+        perfil.setTipo("Administrador");
+        savePerfil(perfil);
 
-            perfil = new Perfil();
-            perfil.setTipo("Atendente");
-            savePerfil(perfil);
+        perfil = new Perfil();
+        perfil.setTipo("Atendente");
+        savePerfil(perfil);
 
+        perfil = new Perfil();
+        perfil.setTipo("Solicitante");
+        savePerfil(perfil);
+
+        perfil = new Perfil();
+        perfil.setTipo("Usuario");
+        savePerfil(perfil);
     }
 }

@@ -79,9 +79,8 @@ public class ControllerAdministrador {
     }
     @GetMapping("/listaAtendente")
     public ResponseEntity<List<Atendente>> todosAtendentes(){
-
-        atendenteServices.adicionarAtendenteTest();
-       return new ResponseEntity<>(atendenteServices.getAllAtendentes(), HttpStatus.OK);
+        atendenteServices.adicionarAtendentes();
+        return new ResponseEntity<>(atendenteServices.getAllAtendentes(), HttpStatus.OK);
     }
 
     @GetMapping("/atendente/{id}")

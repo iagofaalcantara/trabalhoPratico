@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/perfil")
+@RequestMapping("perfil")
 public class ControllerPerfil{
     @Autowired
     private PerfilServices perfilServices;
@@ -32,7 +32,7 @@ public class ControllerPerfil{
         return new ResponseEntity<>(perfil, HttpStatus.OK);
     }
 
-    @PostMapping("/novo")
+    @PostMapping("/novoPerfil")
     public ResponseEntity<Perfil> addPerfil(@NonNull @Validated @RequestBody Perfil perfil){
 
         perfilServices.savePerfil(perfil);
@@ -63,15 +63,15 @@ public class ControllerPerfil{
             return  new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
 
-        perfilServices.removerPerfil(perfil);
+        perfilServices.deletePerfil(perfil);
         return new ResponseEntity<>(perfil, HttpStatus.OK);
     }
 
-    @GetMapping("")
+    @GetMapping("/listaPerfis")
     public ResponseEntity<List<Perfil>> todosPerfis(){
 
         perfilServices.adicionarPerfil();
-        return new ResponseEntity<>(perfilServices.getAll(), HttpStatus.OK);
+        return new ResponseEntity<>(perfilServices.getAllPerfis(), HttpStatus.OK);
     }
 
 
