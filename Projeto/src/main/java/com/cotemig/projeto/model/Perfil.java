@@ -3,19 +3,20 @@ package com.cotemig.projeto.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Table(name = "perfil")
+@Table(name = "perfis")
 public class Perfil {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String tipo;
 
-    public Perfil( String tipo) {
+    private int codigo;
 
+    public Perfil(String tipo, int codigo) {
         this.tipo = tipo;
+        this.codigo = codigo;
     }
 
     public Perfil(){
@@ -26,7 +27,7 @@ public class Perfil {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -36,5 +37,13 @@ public class Perfil {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 }
