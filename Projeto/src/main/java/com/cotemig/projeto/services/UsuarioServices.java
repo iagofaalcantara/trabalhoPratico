@@ -3,10 +3,11 @@ package com.cotemig.projeto.services;
 import com.cotemig.projeto.model.Usuario;
 import com.cotemig.projeto.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class UsuarioServices {
 
     @Autowired
@@ -43,6 +44,7 @@ public class UsuarioServices {
             user1Teste.setRamal(123);
             user1Teste.setSenha("45789");
            user1Teste.setSetor("vendas");
+           saveUsuario(user1Teste);
 
            user1Teste = new Usuario();
            user1Teste.setNome("Ana Bianca");
@@ -51,6 +53,7 @@ public class UsuarioServices {
             user1Teste.setRamal(800);
             user1Teste.setSenha("85965");
             user1Teste.setSetor("engenharia");
+            saveUsuario(user1Teste);
 
         }
 

@@ -1,17 +1,21 @@
 package com.cotemig.projeto.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.*;
+
+
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name = "perfil")
 public class Perfil {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String tipo;
 
-    public Perfil(int id, String tipo) {
-        this.id = id;
+    public Perfil( String tipo) {
+
         this.tipo = tipo;
     }
 

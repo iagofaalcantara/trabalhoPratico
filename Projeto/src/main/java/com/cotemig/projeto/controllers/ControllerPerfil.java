@@ -68,7 +68,7 @@ public class ControllerPerfil{
         return new ResponseEntity<>(perfil, HttpStatus.OK);
     }
 
-    @GetMapping("/todos")
+    @GetMapping("")
     public ResponseEntity<List<Perfil>> todosPerfis(){
 
         perfilServices.adicionarPerfil();

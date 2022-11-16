@@ -71,7 +71,7 @@ public class ControllerUsuário {
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
 
-    @GetMapping("/todos")
+    @GetMapping("")
     public ResponseEntity<List<Usuario>> todosUsuarios(){
 
         usuarioServices.adicionarUsuarioTeste();

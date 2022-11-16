@@ -48,6 +48,7 @@ public class AtendenteServices {
         atendente1.setEmail("bia.cotemig@gmail.com");
         atendente1.setRamal(4669);
         atendente1.setSetor("ICT");
+        saveAtendente(atendente1);
 
     }
 

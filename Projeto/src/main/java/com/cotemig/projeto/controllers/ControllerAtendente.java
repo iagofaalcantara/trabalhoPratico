@@ -1,9 +1,7 @@
 package com.cotemig.projeto.controllers;
 
 import com.cotemig.projeto.model.Atendente;
-import com.cotemig.projeto.model.Perfil;
 import com.cotemig.projeto.services.AtendenteServices;
-import com.cotemig.projeto.services.PerfilServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
