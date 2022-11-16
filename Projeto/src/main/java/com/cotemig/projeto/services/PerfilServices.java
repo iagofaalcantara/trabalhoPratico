@@ -3,11 +3,10 @@ package com.cotemig.projeto.services;
 import com.cotemig.projeto.model.Perfil;
 import com.cotemig.projeto.repository.PerfilRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-@Service
+
 public class PerfilServices {
 
     @Autowired

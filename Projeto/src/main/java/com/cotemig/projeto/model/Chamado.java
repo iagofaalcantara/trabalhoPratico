@@ -5,16 +5,11 @@ import java.util.Date;
 public class Chamado {
     private String tipo;
     private String descricao;
-    private String data;
+    private Date data;
     private String[] anexo;
     private String status;
     private int nivelPrioridade;
-
-    public Chamado() {
-
-    }
-
-    public Chamado(String tipo, String descricao, String data, String[] anexo, String status, int nivelPrioridade) {
+    public Chamado(String tipo, String descricao, Date data, String[] anexo, String status, int nivelPrioridade) {
         this.tipo = tipo;
         this.descricao = descricao;
         this.data = data;
@@ -38,11 +33,11 @@ public class Chamado {
         this.descricao = descricao;
     }
 
-    public String getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Date data) {
         this.data = data;
     }
 

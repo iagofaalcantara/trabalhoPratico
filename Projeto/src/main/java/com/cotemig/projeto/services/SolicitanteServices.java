@@ -1,12 +1,5 @@
 package com.cotemig.projeto.services;
 
-import com.cotemig.projeto.model.Solicitante;
-import com.cotemig.projeto.repository.SolicitanteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
-import java.util.Optional;
-
 public class SolicitanteServices {
 
     @Autowired
