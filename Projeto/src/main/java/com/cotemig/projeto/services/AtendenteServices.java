@@ -24,7 +24,7 @@ public class AtendenteServices {
         return atendente.get();
     }
 
-    public List<Atendente>  getlAll(){
+    public List<Atendente>  getAll(){
 
         return atendenteRepository.findAll();
 
