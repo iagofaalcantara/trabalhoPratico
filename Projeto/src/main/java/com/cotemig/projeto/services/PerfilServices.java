@@ -7,10 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
-
 @Service
-public class PerfilServices implements PerfilService{
+public class PerfilServices {
+
     @Autowired
     private PerfilRepository perfilRepository;
 
@@ -23,35 +22,26 @@ public class PerfilServices implements PerfilService{
         return  perfil.get();
     }
 
-    public List<Perfil> getAllPerfis(){
+    public List<Perfil> getAll(){
         return perfilRepository.findAll();
     }
-
     public  void savePerfil(Perfil perfil){
         perfilRepository.save(perfil);
     }
 
-    @Override
-    public void deletePerfil(Perfil perfil) {
+    public void removerPerfil(Perfil perfil){
         perfilRepository.delete(perfil);
     }
 
     public void adicionarPerfil(){
+        if(getAll().isEmpty()){
+            Perfil perfil = new Perfil();
+            perfil.setTipo("Administrador");
+            savePerfil(perfil);
 
-        Perfil perfil = new Perfil();
-        perfil.setTipo("Administrador");
-        savePerfil(perfil);
-
-        perfil = new Perfil();
-        perfil.setTipo("Atendente");
-        savePerfil(perfil);
-
-        perfil = new Perfil();
-        perfil.setTipo("Solicitante");
-        savePerfil(perfil);
-
-        perfil = new Perfil();
-        perfil.setTipo("Usuario");
-        savePerfil(perfil);
+            perfil = new Perfil();
+            perfil.setTipo("Atendente");
+            savePerfil(perfil);
+        }
     }
 }

@@ -1,16 +1,13 @@
 package com.cotemig.projeto.services;
 
-
 import com.cotemig.projeto.model.Solicitante;
 import com.cotemig.projeto.repository.SolicitanteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class SolicitanteServices implements SolicitanteService{
+public class SolicitanteServices {
 
     @Autowired
     private SolicitanteRepository solicitanteRepository;
@@ -24,56 +21,30 @@ public class SolicitanteServices implements SolicitanteService{
         return  solicitante.get();
     }
 
-    public List<Solicitante> getAllSolicitantes(){
+    public List<Solicitante> getAll(){
         return solicitanteRepository.findAll();
     }
     public  void saveSolicitante(Solicitante solicitante){
         solicitanteRepository.save(solicitante);
     }
 
-    public void deleteSolicitante(Solicitante solicitante){
+    public void removerSolicitante(Solicitante solicitante){
         solicitanteRepository.delete(solicitante);
     }
 
-    public void adicionarSolicitante(){
+    public void adicionarSolicitanteTeste(){
 
-        if(getAllSolicitantes().isEmpty()){
+        if(getAll().isEmpty()){
 
-            Solicitante solicitante = new Solicitante();
-            solicitante.setNome("Lívia Bragança");
-            solicitante.setCargo("Desenvolvedora");
-            solicitante.setEmail("livia.fsb@gmail.com");
-            solicitante.setRamal(555);
-            solicitante.setSenha("2020");
-            solicitante.setSetor("TI");
-            saveSolicitante(solicitante);
+            Solicitante user1Teste = new Solicitante();
+            user1Teste.setNome("Lívia Bragança");
+            user1Teste.setCargo("desenvolvedora");
+            user1Teste.setEmail("livia.fsb@gmail.com");
+            user1Teste.setRamal(555);
+            user1Teste.setSenha("2020");
+           user1Teste.setSetor("TI");
 
-            solicitante = new Solicitante();
-            solicitante.setNome("Iago Alcantara");
-            solicitante.setCargo("Diretor Presidente");
-            solicitante.setEmail("iago@cotemig.com");
-            solicitante.setRamal(818);
-            solicitante.setSenha("bh2022");
-            solicitante.setSetor("Presidência");
-            saveSolicitante(solicitante);
-
-            solicitante = new Solicitante();
-            solicitante.setNome("Paula Beatriz");
-            solicitante.setCargo("Diretora de Desenvolvimento");
-            solicitante.setEmail("paula@cotemig.com");
-            solicitante.setRamal(755);
-            solicitante.setSenha("bia2022");
-            solicitante.setSetor("Diretoria de Desenvolvimento");
-            saveSolicitante(solicitante);
-
-            solicitante = new Solicitante();
-            solicitante.setNome("Eliana Carsoso");
-            solicitante.setCargo("Diretora de Recursos Humanos");
-            solicitante.setEmail("eliana@cotemig.com");
-            solicitante.setRamal(895);
-            solicitante.setSenha("eliana2022");
-            solicitante.setSetor("Diretoria de Recursos Humanos");
-            saveSolicitante(solicitante);
         }
+
     }
 }

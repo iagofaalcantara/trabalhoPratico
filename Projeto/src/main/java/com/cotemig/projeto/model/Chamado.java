@@ -1,45 +1,27 @@
 package com.cotemig.projeto.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.persistence.*;
 import java.util.Date;
 
-
-@Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-@Table(name = "chamado")
 public class Chamado {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
-    private Long id;
-
     private String tipo;
     private String descricao;
     private String data;
+    private String[] anexo;
     private String status;
     private int nivelPrioridade;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public Chamado() {
+
     }
 
-    public Chamado(String tipo, String descricao, String data, String status, int nivelPrioridade) {
+    public Chamado(String tipo, String descricao, String data, String[] anexo, String status, int nivelPrioridade) {
         this.tipo = tipo;
         this.descricao = descricao;
         this.data = data;
+        this.anexo = anexo;
         this.status = status;
         this.nivelPrioridade = nivelPrioridade;
     }
-
     public String getTipo() {
         return tipo;
     }
@@ -62,6 +44,14 @@ public class Chamado {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public String[] getAnexo() {
+        return anexo;
+    }
+
+    public void setAnexo(String[] anexo) {
+        this.anexo = anexo;
     }
 
     public String getStatus() {
