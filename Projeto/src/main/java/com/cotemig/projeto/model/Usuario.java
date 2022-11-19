@@ -27,6 +27,9 @@ public class Usuario {
     @JoinColumn(name="chamado_id", nullable=false)
     private Chamado chamado;
 
+    public Usuario(String nome, String email, String senha, String setor, int ramal, String cargo) {
+    }
+
     public Perfil getPerfil() {
         return perfil;
     }

@@ -2,6 +2,7 @@ package com.cotemig.projeto.services;
 
 import com.cotemig.projeto.model.Perfil;
 import com.cotemig.projeto.model.Usuario;
+import com.cotemig.projeto.repository.PerfilRepository;
 import com.cotemig.projeto.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Autowired
     UsuarioRepository usuarioRepository;
+
+    @Autowired
+    PerfilRepository perfilRepository;
 
 
     @Override
@@ -61,6 +65,28 @@ public class UsuarioServiceImpl implements UsuarioService{
     public void insertUsuario(Usuario usuario) {
         usuarioRepository.save(usuario);
     }
+
+    @Override
+    public Usuario findUsuarioByEmail(String email) {
+        return usuarioRepository.findByEmail(email);
+    }
+
+    @Override
+    public boolean findPerfilByUsuario(String perfil, Usuario usuario) {
+        return usuario.getPerfil().equals(perfilRepository.findByPerfil(perfil));
+    }
+
+    @Override
+    public boolean isAdministrador(Usuario usuario) {
+        return usuario.getPerfil().equals("Administrador");
+    }
+
+    @Override
+    public boolean isAtendente(Usuario usuario) {
+        return usuario.getPerfil().equals("Atendente");
+    }
+
+
 
 
     public void insertUsuario(Usuario usuario, Perfil perfil) {

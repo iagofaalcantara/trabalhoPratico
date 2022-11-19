@@ -16,4 +16,14 @@ public interface UsuarioService {
     void updateUsuarioById(Integer id, Usuario usuario);
     void updateUsuario(Usuario usuario);
     void insertUsuario(Usuario usuario);
+
+    Usuario findUsuarioByEmail(String email);
+
+    boolean findPerfilByUsuario(String cargo, Usuario usuario);
+
+    boolean isAdministrador(Usuario usuario);
+
+    boolean isAtendente(Usuario usuario);
+
+
 }
