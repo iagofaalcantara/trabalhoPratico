@@ -18,26 +18,7 @@ public class ChamadoServices {
     @Autowired
     SolicitanteRepository solicitanteRepository;
 
-    public Chamado getAtendente(Integer id){
-        Optional<Chamado> chamados = chamadoRepository.findById(id);
-        if(chamados.isEmpty()){
-            return null;
-        }
-        return chamados.get();
-    }
-
-    public List<Chamado> getAll (){
-        return chamadoRepository.findAll();
-    }
-
-    public void saveChamado(Chamado chamado){
-        chamadoRepository.save(chamado);
-    }
-
-    public void deleteChamado(Chamado chamado){
-        chamadoRepository.delete(chamado);
-    }
-
+    //Teste em banco
     public void adicionarChamadoTeste(){
         Chamado chamado1 = new Chamado();
         chamado1.setTipo("A");
@@ -50,7 +31,4 @@ public class ChamadoServices {
 
     }
 
-    //public Chamado solicitanteDoChamado(Integer id){
-
-    //}
 }

@@ -1,7 +1,9 @@
 package com.cotemig.projeto.services;
 
 import com.cotemig.projeto.model.Atendente;
+import com.cotemig.projeto.model.Chamado;
 import com.cotemig.projeto.repository.AtendenteRepository;
+import com.cotemig.projeto.repository.ChamadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ public class AtendenteServices {
     @Autowired
     AtendenteRepository atendenteRepository;
 
+    @Autowired
+    ChamadoRepository chamadoRepository;
+
     public Atendente getAtendente(Integer id){
 
         Optional<Atendente> atendente = atendenteRepository.findById(id);
@@ -24,21 +29,16 @@ public class AtendenteServices {
         return atendente.get();
     }
 
-    public List<Atendente>  getAll(){
+    public List<Atendente>  getAllAtendentes(){
 
         return atendenteRepository.findAll();
 
     }
+
     public void saveAtendente(Atendente atendente){
 
         atendenteRepository.save(atendente);
     }
-    public void deleteAtendente(Atendente atendente){
-
-        atendenteRepository.delete(atendente);
-
-    }
-
     public void adicionarAtendenteTest(){
 
         Atendente atendente1 = new Atendente();
@@ -51,6 +51,22 @@ public class AtendenteServices {
         saveAtendente(atendente1);
 
     }
+    public void deleteAtendente(Atendente atendente) {
+        atendenteRepository.delete(atendente);  }
 
+    public Chamado getChamados(Integer id){
+        Optional<Chamado> chamados = chamadoRepository.findById(id);
+        if(chamados.isEmpty()){
+            return null;
+        }
+        return chamados.get();
+    }
 
+    public List<Chamado> getAllChamados(){
+        return chamadoRepository.findAll();
+    }
+
+    public void deleteChamado(Chamado chamado){
+        chamadoRepository.delete(chamado);
+    }
 }
