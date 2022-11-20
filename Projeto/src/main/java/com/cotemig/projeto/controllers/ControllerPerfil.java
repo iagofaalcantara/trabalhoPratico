@@ -20,13 +20,13 @@ public class ControllerPerfil{
     public ResponseEntity<Perfil> getPerfil(@PathVariable("id") Integer id){
 
         if(id < 0){
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return  new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
         Perfil perfil = perfilServices.getPerfil(id);
 
         if(perfil == null){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return  new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
         return new ResponseEntity<>(perfil, HttpStatus.OK);
@@ -39,27 +39,27 @@ public class ControllerPerfil{
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Perfil> updatePerfil(@NonNull @Validated @RequestBody Perfil perfil, @PathVariable Integer id){
+    public ResponseEntity<Perfil> updatePerfil( @NonNull @Validated @RequestBody Perfil perfil, @PathVariable Integer id ){
 
-        Perfil pSearch = perfilServices.getPerfil(id);
+        Perfil perfilSearch = perfilServices.getPerfil(id);
 
-        if(pSearch == null){
+        if(perfilSearch == null){
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
 
-        perfil.setId(pSearch.getId());
-        perfilServices.savePerfil(pSearch);
+        perfil.setId(perfilSearch.getId());
+        perfilServices.savePerfil(perfilSearch);
 
         return new ResponseEntity<>(perfil, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Perfil> deletePerfil(@NonNull @Validated @PathVariable Integer id){
+    public ResponseEntity<Perfil> deletePerfil (@NonNull @Validated @PathVariable Integer id){
 
         Perfil perfil = perfilServices.getPerfil(id);
 
         if(perfil == null){
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return  new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
 
         perfilServices.deletePerfil(perfil);
@@ -68,6 +68,7 @@ public class ControllerPerfil{
 
     @GetMapping("/listaPerfis")
     public ResponseEntity<List<Perfil>> todosPerfis(){
+
         perfilServices.adicionarPerfil();
         return new ResponseEntity<>(perfilServices.getAllPerfis(), HttpStatus.OK);
     }

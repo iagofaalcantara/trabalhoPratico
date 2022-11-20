@@ -19,39 +19,18 @@ public class Usuario {
     private int ramal;
     private String cargo;
 
-    @ManyToOne
-    @JoinColumn(name = "perfil_id")
-    private Perfil perfil;
-
-    @ManyToOne
-    @JoinColumn(name="chamado_id", nullable=false)
-    private Chamado chamado;
-
-    public Usuario(String nome, String email, String senha, String setor, int ramal, String cargo) {
-    }
-
-    public Perfil getPerfil() {
-        return perfil;
-    }
-
-    public void setPerfil(Perfil perfil) {
-        this.perfil = perfil;
-    }
-
     //construtor criado pela ide, se excluir da erro
     public Usuario() {
     }
 
-    public Usuario(String nome, String email, String senha, String setor, int ramal, String cargo, Perfil perfil) {
+    public Usuario(String nome, String email, String senha, String setor, int ramal, String cargo) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.setor = setor;
         this.ramal = ramal;
         this.cargo = cargo;
-        this.perfil = perfil;
     }
-
 
     public Integer getId() {
         return id;
