@@ -77,7 +77,7 @@ public class ControllerAdministrador {
 
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
-    @GetMapping("/listaAtendentes")
+    @GetMapping("/listaAtendente")
     public ResponseEntity<List<Atendente>> todosAtendentes(){
 
         atendenteServices.adicionarAtendenteTest();
@@ -100,7 +100,7 @@ public class ControllerAdministrador {
 
         return new ResponseEntity<>(atendente, HttpStatus.OK);
     }
-    @DeleteMapping("/deleteAtendente/{id}")
+    @DeleteMapping("/deleteatendente/{id}")
     public ResponseEntity<Atendente> deleteAtendente (@NonNull @Validated @PathVariable Integer id){
 
         Atendente atendente = atendenteServices.getAtendente(id);

@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository("atendenteRepository")
 public interface AtendenteRepository extends JpaRepository<Atendente, Integer> {
 
+
 }

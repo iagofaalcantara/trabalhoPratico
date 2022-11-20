@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface UsuarioService {
 
-
     void updateUsuarioById(Integer id, Usuario usuario);
     void updateUsuario(Usuario usuario);
     void saveChamado(Chamado chamado);
@@ -16,6 +15,5 @@ public interface UsuarioService {
     void deleteChamado(Chamado chamado);
 
     public List<Usuario> getAllUsuarios();
-
 
 }

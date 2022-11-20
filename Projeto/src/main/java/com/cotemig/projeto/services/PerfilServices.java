@@ -11,10 +11,8 @@ import java.util.Optional;
 
 @Service
 public class PerfilServices {
-
     @Autowired
     private PerfilRepository perfilRepository;
-
     public Perfil getPerfil(Integer id){
         Optional<Perfil> perfil = perfilRepository.findById(id);
 

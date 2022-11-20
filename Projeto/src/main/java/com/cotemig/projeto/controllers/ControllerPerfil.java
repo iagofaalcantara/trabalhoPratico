@@ -14,7 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/perfil")
 public class ControllerPerfil{
-
     @Autowired
     private PerfilServices perfilServices;
     @GetMapping("/{id}")

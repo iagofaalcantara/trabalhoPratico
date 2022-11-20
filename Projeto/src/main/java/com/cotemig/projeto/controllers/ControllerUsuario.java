@@ -30,14 +30,12 @@ public class ControllerUsuario {
     public ResponseEntity<Usuario> editarUsuario( @NonNull @Validated @RequestBody Usuario usuario, @PathVariable Integer id ){
 
         Usuario usuarioSearch = usuarioServices.getUsuario(id);
-
         if(usuarioSearch == null){
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
 
         usuario.setId(usuarioSearch.getId());
         usuarioServices.saveUsuario(usuarioSearch);
-
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
 

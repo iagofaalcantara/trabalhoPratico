@@ -75,8 +75,6 @@ public class UsuarioServices implements UsuarioService {
         return usuarioRepository.findById(id);
     }
 
-
-
     //Atualizar
     @Override
     public void updateUsuarioById(Integer id, Usuario usuario) {
@@ -94,7 +92,6 @@ public class UsuarioServices implements UsuarioService {
         usuarioRepository.save(usuario);
     }
 
-
     //Atualiza todos
     @Override
     public void updateUsuario(Usuario usuario) {
@@ -104,7 +101,6 @@ public class UsuarioServices implements UsuarioService {
     public List<Usuario> getAllUsuarios() {
         return usuarioRepository.findAll();
     }
-
     //Metodos para acesar o chamados
 
     //Salvar um chamado

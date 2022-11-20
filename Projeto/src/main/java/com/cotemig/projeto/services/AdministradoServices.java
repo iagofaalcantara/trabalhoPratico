@@ -28,12 +28,10 @@ public class AdministradoServices implements AdministradorService {
     public Optional<Usuario> getUsuarioById(Integer id) {
         return usuarioRepository.findById(id);
     }
-
     @Override
     public List<Usuario> getAllUsuarios() {
         return usuarioRepository.findAll();
     }
-
     @Override
     public void deleteAllUsuarios() {
         usuarioRepository.deleteAll();

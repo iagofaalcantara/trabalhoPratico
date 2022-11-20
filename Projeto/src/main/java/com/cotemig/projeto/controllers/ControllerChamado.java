@@ -7,4 +7,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/chamados")
 public class ControllerChamado {
+
 }

@@ -9,7 +9,7 @@ import org.springframework.lang.NonNull;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/atendente")
@@ -17,7 +17,6 @@ public class ControllerAtendente {
 
     @Autowired
     private AtendenteServices atendenteServices;
-
     @PutMapping("/update/{id}")
     public ResponseEntity<Atendente> updateAtendente( @NonNull @Validated @RequestBody Atendente atendente, @PathVariable Integer id ){
 

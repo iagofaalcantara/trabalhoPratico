@@ -7,7 +7,4 @@ import org.springframework.stereotype.Repository;
 @Repository("chamadoRepository")
 public interface ChamadoRepository extends JpaRepository<Chamado, Integer> {
 
-
-
-
 }

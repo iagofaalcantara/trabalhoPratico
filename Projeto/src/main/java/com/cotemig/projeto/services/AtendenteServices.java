@@ -15,10 +15,8 @@ public class AtendenteServices {
 
     @Autowired
     AtendenteRepository atendenteRepository;
-
     @Autowired
     ChamadoRepository chamadoRepository;
-
     public Atendente getAtendente(Integer id){
 
         Optional<Atendente> atendente = atendenteRepository.findById(id);
